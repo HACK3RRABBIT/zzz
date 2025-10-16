@@ -1,0 +1,199 @@
+:root {
+    --light-bg: #fff;
+    --light-text: #1a202c;
+    --light-green: #48bb78;
+    --light-border: #e2e8f0;
+
+    --dark-bg: #1a202c;
+    --dark-text: #edf2f7;
+    --dark-red: #e53e3e;
+    --dark-border: #2d3748;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    margin: 0;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.light-theme {
+    background-color: var(--light-bg);
+    color: var(--light-text);
+}
+
+.dark-theme {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--light-border);
+}
+
+.dark-theme header {
+    border-bottom-color: var(--dark-border);
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+#add-movie-btn {
+    background-color: var(--light-green);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 40px;
+    text-align: center;
+}
+
+.dark-theme #add-movie-btn {
+    background-color: var(--dark-red);
+}
+
+#movie-list {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.movie-item {
+    border: 1px solid var(--light-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.movie-item:hover {
+    transform: translateY(-5px);
+}
+
+.dark-theme .movie-item {
+    border-color: var(--dark-border);
+}
+
+.movie-item a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.poster-preview {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 105%;
+    width: 150px;
+    height: auto;
+    border: 1px solid var(--light-border);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.movie-item:hover .poster-preview {
+    display: block;
+}
+
+.poster-preview img {
+    width: 100%;
+    display: block;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: var(--light-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.dark-theme .modal-content {
+    background-color: var(--dark-bg);
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Other global styles */
+a {
+    color: var(--light-green);
+}
+
+.dark-theme a {
+    color: var(--dark-red);
+}
+
+button {
+    background-color: var(--light-green);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.dark-theme button {
+    background-color: var(--dark-red);
+}
+
+input[type="text"], input[type="number"], input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--light-border);
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.dark-theme input[type="text"], .dark-theme input[type="number"], .dark-theme input[type="password"] {
+    background-color: var(--dark-border);
+    border-color: var(--dark-border);
+    color: var(--dark-text);
+}
+
+/* Login page */
+.login-container {
+    max-width: 400px;
+    margin: 5rem auto;
+    padding: 2rem;
+    border: 1px solid var(--light-border);
+    border-radius: 8px;
+}
+
+.dark-theme .login-container {
+    border-color: var(--dark-border);
+}

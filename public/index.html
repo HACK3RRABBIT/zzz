@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Playlist</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Movie Playlist</h1>
+        <button id="add-movie-btn">+</button>
+        <div class="theme-switcher">
+            <label for="theme-select">Theme:</label>
+            <select id="theme-select">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+            </select>
+        </div>
+    </header>
+    <main id="movie-list"></main>
+
+    <div id="add-movie-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Add New Movie</h2>
+            <form id="add-movie-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <label for="masterLink">Master Link:</label>
+                <input type="text" id="masterLink">
+                <label for="seasons">Number of Seasons:</label>
+                <input type="number" id="seasons" value="0" min="0">
+                <div id="season-episodes"></div>
+                <label for="poster">Poster URL or Upload:</label>
+                <input type="text" id="posterUrl" placeholder="Enter image URL">
+                <input type="file" id="posterUpload">
+                <button type="submit">Create</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
